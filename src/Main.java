@@ -15,20 +15,23 @@ import java.util.Vector;
 public class Main {
     public static void main(String[] args) {
         System.out.println("-----------Funcion de inversion de orden-----------");
-        String str = "Techie Delight";
+        String str = "Concern Appe";
 
-        // Tenga en cuenta que la string es inmutable en Java.
+    // Tenga en cuenta que la string es inmutable en Java.
+
         str = reverse(str);
 
-        System.out.println("The reverse of the given string is: " + str);
+        System.out.println("El reverso del string es: " + str);
 
-        //2-Array unidimensional y su recorrido.
+    //2-Array unidimensional y su recorrido.
+
         System.out.println("-----------Array unidimensional de String-----------");
         String[] arreglo = {"Huevo", "Jamon", "Jugo", "Queso", "Pan"};
         for (String s : arreglo) {
             System.out.println(s);
         }
-        //3-Array bidimensional y su recorrido.
+    //3-Array bidimensional y su recorrido.
+
         System.out.println("-----------Array bidimensional de enteros-----------");
         int[][] matriz = {{1, 2, 3},{4, 5, 6}};
         for (int[] ints : matriz) {
@@ -39,7 +42,8 @@ public class Main {
             }
             System.out.println();
         }
-        //4A-Vector de tipo entero y eliminacion de su segundo y primer elemento.
+    //4A-Vector de tipo entero y eliminacion de su segundo y primer elemento.
+
         System.out.println("-----------Vector de tipo String-----------");
         Vector <String> vec = new Vector<>(5, 5);
         vec.add("Conejo");
@@ -52,7 +56,7 @@ public class Main {
 
         System.out.println(vec);
 
-        /*4B-
+    /*4B-
           El problema de añadir 1000 elementos a un vector que posee un tamaño por defecto(10) radica en el
         consumo de memoria que implicara su expansion, ya que esta sera inicialmente del doble de tamaño que posee
         al momento de su desborde y el proceso se repetira hasta alcanzar la cuota de espacio necesaria.
@@ -60,6 +64,7 @@ public class Main {
         en el nuevo, el proceso se vuelve muy demandante para la maquina.*/
 
     //5-Creacion de un ArrayList de tipo string y su copiado a un LinkedList
+
         ArrayList<String> lista = new ArrayList<>();
         lista.add("Maria");
         lista.add("Jose");
@@ -68,18 +73,35 @@ public class Main {
 
         LinkedList<String> listaEnlazada = new LinkedList<>(lista);
 
-        //Bucle for para imprimir arrayList
+    //Bucle for para imprimir arrayList
+
         System.out.println("-----------ArrayList elemento por elemento-----------");
         for(int i=0;i <lista.size() ; i++){
             System.out.println("El valor del elemento numero " + i + " del arraylist es " + lista.get(i));
         }
 
-        //Bucle for para imprimir linkedList
+    //Bucle for para imprimir linkedList
+
         System.out.println("-----------LinkedList elemento por elemento-----------");
         for(int i=0;i <listaEnlazada.size() ; i++){
             System.out.println("El valor del elemento numero " + i + " de la linkedlist es " + listaEnlazada.get(i));
         }
 
+    //6-Creacion de un arraylist, agregado de elementos del 1 al 10 a traves de un bucle for.
+        System.out.println("-----------ArrayList rellenada con bucle for cuyos pares son substraidos-----------");
+        ArrayList<Integer> enteros = new ArrayList<>(10);
+
+        for (int i = 1; i <= 10; i++) {
+            enteros.add(i);
+            }
+        for(int i = 0; i<enteros.size(); i++){
+            if(enteros.get(i) % 2 == 0){
+                enteros.remove(i);
+            }
+        }
+        System.out.println(enteros);
+
+    //7-
     }
 
 //1-Funcion que devuelve los caracteres de un string con el orden inverso.
