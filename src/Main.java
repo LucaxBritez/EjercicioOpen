@@ -161,9 +161,5 @@ public class Main {
 
 
 //8-
-    public static int CopiaFichero(FileInputStream in, FileOutputStream out) {
-        System.out.println("La direccion in es :" + in);
-        System.out.println("La direccion out es :" + out);
 
-    }
 }
