@@ -1,3 +1,5 @@
+import java.io.*;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Vector;
@@ -12,6 +14,9 @@ import java.util.Vector;
         7-Crea una función DividePorCero. Esta, debe generar una excepción ("throws") a su llamante del tipo ArithmeticException que será capturada por su llamante (desde "main", por ejemplo). Si se dispara la excepción, mostraremos el mensaje "Esto no puede hacerse". Finalmente, mostraremos en cualquier caso: "Demo de código".
         8-Utilizando InputStream y PrintStream, crea una función que reciba dos parámetros: "fileIn" y "fileOut". La tarea de la función será realizar la copia del fichero dado en el parámetro "fileIn" al fichero dado en "fileOut".//
         9-Sorpréndenos creando un programa de tu elección que utilice InputStream, PrintStream, excepciones, un HashMap y un ArrayList, LinkedList o array.*/
+
+
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("-----------Funcion de inversion de orden-----------");
@@ -23,6 +28,10 @@ public class Main {
 
         System.out.println("El reverso del string es: " + str);
 
+
+
+
+
     //2-Array unidimensional y su recorrido.
 
         System.out.println("-----------Array unidimensional de String-----------");
@@ -30,6 +39,11 @@ public class Main {
         for (String s : arreglo) {
             System.out.println(s);
         }
+
+
+
+
+
     //3-Array bidimensional y su recorrido.
 
         System.out.println("-----------Array bidimensional de enteros-----------");
@@ -42,6 +56,11 @@ public class Main {
             }
             System.out.println();
         }
+
+
+
+
+
     //4A-Vector de tipo entero y eliminacion de su segundo y primer elemento.
 
         System.out.println("-----------Vector de tipo String-----------");
@@ -62,6 +81,10 @@ public class Main {
         al momento de su desborde y el proceso se repetira hasta alcanzar la cuota de espacio necesaria.
           Teniendo en cuenta que para poder expandirse se realiza una copia de los datos que posee el arreglo inicial
         en el nuevo, el proceso se vuelve muy demandante para la maquina.*/
+
+
+
+
 
     //5-Creacion de un ArrayList de tipo string y su copiado a un LinkedList
 
@@ -87,6 +110,10 @@ public class Main {
             System.out.println("El valor del elemento numero " + i + " de la linkedlist es " + listaEnlazada.get(i));
         }
 
+
+
+
+
     //6-Creacion de un arraylist, agregado de elementos del 1 al 10 a traves de un bucle for.
         System.out.println("-----------ArrayList rellenada con bucle for cuyos pares son substraidos-----------");
         ArrayList<Integer> enteros = new ArrayList<>(10);
@@ -101,11 +128,42 @@ public class Main {
         }
         System.out.println(enteros);
 
-    //7-
+    //7-Se aplica el metodo DividePorCero y se captura su excepcion.
+        System.out.println("-----------Funcion DividePorCero-----------");
+    try {
+        DividePorCero(1,1);
+        System.out.println("Demo de codigo.");
+    } catch (ArithmeticException e){
+        System.out.println("Esto no puede hacerse.");
     }
+
+
+    //8-
+
+
+    }
+
+
+
+
+
+
 
 //1-Funcion que devuelve los caracteres de un string con el orden inverso.
     public static String reverse(String str) {
         return new StringBuilder(str).reverse().toString();
+    }
+//7-Aplicacion de throws en un metodo que divide entre 0.
+    public static void DividePorCero(int a , int b)throws ArithmeticException{
+        int resultado = a / b;
+        System.out.println("El resultado de la operacion es: " + resultado);
+    }
+
+
+//8-
+    public static int CopiaFichero(FileInputStream in, FileOutputStream out) {
+        System.out.println("La direccion in es :" + in);
+        System.out.println("La direccion out es :" + out);
+
     }
 }
