@@ -130,17 +130,16 @@ public class Main {
 
     //7-Se aplica el metodo DividePorCero y se captura su excepcion.
         System.out.println("-----------Funcion DividePorCero-----------");
-    try {
-        DividePorCero(1,1);
-        System.out.println("Demo de codigo.");
-    } catch (ArithmeticException e){
-        System.out.println("Esto no puede hacerse.");
-    }
-
+        try {
+            DividePorCero(1,1);
+            System.out.println("Demo de codigo.");
+         } catch (ArithmeticException e){
+            System.out.println("Esto no puede hacerse.");
+        }
 
     //8-
-
-
+        System.out.println("-----------Funcion Copiar Fichero a en Fichero B-----------");
+        TopiarFichero("C:/Users/Zeac/Desktop/Trabajo/Fichero.txt");
     }
 
 
@@ -160,6 +159,48 @@ public class Main {
     }
 
 
-//8-asdasdasdasd
+//8-Crear un metodo que reciba 2 parametros
 
+    //8.1-Funcion del punto 8 que hasta ahora no a funcionado(Falta el segundo parametro)
+    public static void CopiarFichero(FileInputStream ingreso){
+        InputStream fichero = ingreso;
+        try {
+            byte[] datos = fichero.readAllBytes();
+
+            for(byte dato : datos ){
+                System.out.println((char)dato);
+            }
+        } catch (IOException e) {
+            System.out.println("Problemas en el array datos");
+        }
+    }
+    //8.1-Funcion que hasta ahora ha funcado(Falta el segundo parametro)
+
+    /*Aclaracion Puali
+    * -Crear un metodo que reciba 2 parametros de tipo String("fileIn", "fileOut")
+    * -Crear variable InputStream que reciba new FileInputStream(fileIn);
+    * -Crear variable InputStream que reciba new FileInputStream(fileOut);
+    *
+    *
+    * */
+    public static void TopiarFichero(String rutaArchivo){
+        try {
+            InputStream fichero1 = new FileInputStream(rutaArchivo);
+            byte[] datos = new byte[0];
+
+            try {
+                datos = fichero1.readAllBytes();
+            } catch (IOException e) {
+                System.out.println("Holi");
+            }
+
+            for(byte dato : datos ){
+                System.out.print((char)dato);
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Hay un problema en la variable fichero");
+        }
+    }
 }
+
+
