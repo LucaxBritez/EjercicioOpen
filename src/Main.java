@@ -1,8 +1,8 @@
 import java.io.*;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Vector;
+
 
 /*Escribe el código que devuelva una cadena al revés. Por ejemplo, la cadena "hola mundo", debe retornar "odnum aloh".
         1-Crea un array unidimensional de Strings y recórrelo, mostrando únicamente sus valores.
@@ -20,17 +20,13 @@ import java.util.Vector;
 public class Main {
     public static void main(String[] args) {
         System.out.println("-----------Funcion de inversion de orden-----------");
-        String str = "Concern Appe";
+        String str = "Concern Ape";
 
-    // Tenga en cuenta que la string es inmutable en Java.
+    //1-Tenga en cuenta que la string es inmutable en Java.
 
-        str = reverse(str);
+        str = Reverse.invertir(str);
 
         System.out.println("El reverso del string es: " + str);
-
-
-
-
 
     //2-Array unidimensional y su recorrido.
 
@@ -39,10 +35,6 @@ public class Main {
         for (String s : arreglo) {
             System.out.println(s);
         }
-
-
-
-
 
     //3-Array bidimensional y su recorrido.
 
@@ -56,10 +48,6 @@ public class Main {
             }
             System.out.println();
         }
-
-
-
-
 
     //4A-Vector de tipo entero y eliminacion de su segundo y primer elemento.
 
@@ -96,23 +84,19 @@ public class Main {
 
         LinkedList<String> listaEnlazada = new LinkedList<>(lista);
 
-    //Bucle for para imprimir arrayList
+    //5B-Bucle for para imprimir arrayList
 
         System.out.println("-----------ArrayList elemento por elemento-----------");
         for(int i=0;i <lista.size() ; i++){
             System.out.println("El valor del elemento numero " + i + " del arraylist es " + lista.get(i));
         }
 
-    //Bucle for para imprimir linkedList
+    //5C-Bucle for para imprimir linkedList
 
         System.out.println("-----------LinkedList elemento por elemento-----------");
         for(int i=0;i <listaEnlazada.size() ; i++){
             System.out.println("El valor del elemento numero " + i + " de la linkedlist es " + listaEnlazada.get(i));
         }
-
-
-
-
 
     //6-Creacion de un arraylist, agregado de elementos del 1 al 10 a traves de un bucle for.
         System.out.println("-----------ArrayList rellenada con bucle for cuyos pares son substraidos-----------");
@@ -131,75 +115,14 @@ public class Main {
     //7-Se aplica el metodo DividePorCero y se captura su excepcion.
         System.out.println("-----------Funcion DividePorCero-----------");
         try {
-            DividePorCero(1,1);
+            Division.DividePorCero(1,1);
             System.out.println("Demo de codigo.");
          } catch (ArithmeticException e){
             System.out.println("Esto no puede hacerse.");
         }
 
-    //8-
-        System.out.println("-----------Funcion Copiar Fichero a en Fichero B-----------");
-        TopiarFichero("C:/Users/Zeac/Desktop/Trabajo/Fichero.txt");
-    }
-
-
-
-
-
-
-
-//1-Funcion que devuelve los caracteres de un string con el orden inverso.
-    public static String reverse(String str) {
-        return new StringBuilder(str).reverse().toString();
-    }
-//7-Aplicacion de throws en un metodo que divide entre 0.
-    public static void DividePorCero(int a , int b)throws ArithmeticException{
-        int resultado = a / b;
-        System.out.println("El resultado de la operacion es: " + resultado);
-    }
-
-
-//8-Crear un metodo que reciba 2 parametros
-
-    //8.1-Funcion del punto 8 que hasta ahora no a funcionado(Falta el segundo parametro)
-    public static void CopiarFichero(FileInputStream ingreso){
-        InputStream fichero = ingreso;
-        try {
-            byte[] datos = fichero.readAllBytes();
-
-            for(byte dato : datos ){
-                System.out.println((char)dato);
-            }
-        } catch (IOException e) {
-            System.out.println("Problemas en el array datos");
-        }
-    }
-    //8.1-Funcion que hasta ahora ha funcado(Falta el segundo parametro)
-
-    /*Aclaracion Puali
-    * -Crear un metodo que reciba 2 parametros de tipo String("fileIn", "fileOut")
-    * -Crear variable InputStream que reciba new FileInputStream(fileIn);
-    * -Crear variable InputStream que reciba new FileInputStream(fileOut);
-    *
-    *
-    * */
-    public static void TopiarFichero(String rutaArchivo){
-        try {
-            InputStream fichero1 = new FileInputStream(rutaArchivo);
-            byte[] datos = new byte[0];
-
-            try {
-                datos = fichero1.readAllBytes();
-            } catch (IOException e) {
-                System.out.println("Holi");
-            }
-
-            for(byte dato : datos ){
-                System.out.print((char)dato);
-            }
-        } catch (FileNotFoundException e) {
-            System.out.println("Hay un problema en la variable fichero");
-        }
+    //8-Metodo que copia el contenido de una direccion en otra.
+        Copia.CopiarFichero("C:/Users/Zeac/Downloads/010Amnesia/10Amnesia.pdf", "C:/Users/Zeac/Desktop/Trabajo/Copia.pdf" );
     }
 }
 
