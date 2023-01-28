@@ -1,3 +1,5 @@
+package Clases;
+
 import java.io.*;
 
 public class Copia {
@@ -12,7 +14,7 @@ public class Copia {
 
                 PrintStream out = new PrintStream(fileOut);
                 out.write(datos);
-                System.out.println("-----------Ejercicio 8 se ejecuto sin problemas(Copia de ficheros)-----------");
+                System.out.println("-----------Ejercicio 8 se ejecuto sin problemas(Clases.Copia de ficheros)-----------");
 
             } catch (IOException e) {
                 System.out.println("Hay un problema en el Array datos o en el PrintStream");

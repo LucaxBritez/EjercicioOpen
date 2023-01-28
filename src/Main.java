@@ -1,4 +1,7 @@
-import java.io.*;
+import Clases.Copia;
+import Clases.Division;
+import Clases.Reverse;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Vector;
@@ -122,7 +125,7 @@ public class Main {
         }
 
     //8-Metodo que copia el contenido de una direccion en otra.
-        Copia.CopiarFichero("C:/Users/Zeac/Downloads/010Amnesia/10Amnesia.pdf", "C:/Users/Zeac/Desktop/Trabajo/Copia.pdf" );
+        Copia.CopiarFichero("C:/Users/Zeac/Downloads/010Amnesia/10Amnesia.pdf", "C:/Users/Zeac/Desktop/Trabajo/Clases.Copia.pdf" );
     }
 }
 
